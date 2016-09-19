@@ -117,7 +117,7 @@ for epoch in range (hm_epochs):
         e,a=sess.run([cross_entropy,train_step],feed_dict)
         ind+=100
         if e<1:break # early stopping yay
-print "step %d : entropy %s" % (epoch,e)
+print "step %d : entropy %s" % (epoch,e) # itt hiba van
 
 
 
@@ -125,7 +125,7 @@ print "step %d : entropy %s" % (epoch,e)
 correct_prediction = tf.equal(tf.argmax(y,1), tf.argmax(y_proba,1))
 accuracy = tf.reduce_mean(tf.cast(correct_prediction, "float"))
 
-print "accuracy %s"%(accuracy.eval({x: x_proba, y_: y_proba}))
+print "accuracy %s"%(accuracy.eval({x: x_proba, y_: y_proba})) # itt hiba van
 
 learned_output=tf.argmax(y,1)
 print learned_output.eval({x: x_proba})
